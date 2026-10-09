@@ -13,6 +13,7 @@ This repository collects the notebooks, report draft, and supporting notes for t
 - [`InClassActivity2_Report_Draft.pdf`](InClassActivity2_Report_Draft.pdf) — preliminary one-page report draft.
 - [`experiment-commands.txt`](experiment-commands.txt) — commands used for the main model experiments.
 - [`docs/EXPERIMENT_RESULTS.md`](docs/EXPERIMENT_RESULTS.md) — summary of recorded results, tuning values, and comparison caveats.
+- [`docs/ACTIVITY_CHECKLIST.md`](docs/ACTIVITY_CHECKLIST.md) — task coverage, remaining report checks, and a note about the interpolation wording in the handout.
 - [`.gitignore`](.gitignore) — excludes local corpora, generated models, logs, and build artifacts from accidental commits.
 
 ## Run the standalone notebook
