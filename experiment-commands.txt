@@ -1,0 +1,31 @@
+SRILM commands from the In-Class Activity 2 notebook
+======================================================
+
+The paths below reflect the original Colab environment. They may need to be changed for another environment.
+
+1. Create bigram counts
+ngram-count -text /content/brown-train-marked.txt -order 2 -write /content/brown-train.count
+
+2. Build unsmoothed bigram model
+ngram-count -read /content/brown-train.count -order 2 -lm /content/brown-bigram-unsmoothed.lm -addsmooth 0 -unk
+
+3. Build Kneser-Ney bigram model
+ngram-count -text /content/brown-train-marked.txt -order 2 -lm /content/brown-bigram-kn.lm -unk -kndiscount
+
+4. Build Kneser-Ney trigram model
+ngram-count -text /content/brown-train-marked.txt -order 3 -lm /content/brown-trigram-kn.lm -unk -kndiscount
+
+5. Build unigram interpolation model
+ngram-count -text /content/brown-train-marked.txt -order 1 -lm /content/brown-unigram.lm -unk
+
+6. Build bigram interpolation model
+ngram-count -text /content/brown-train-marked.txt -order 2 -lm /content/brown-bigram-interp.lm -unk -kndiscount
+
+7. Evaluate a model on the test split (unknown-word handling enabled)
+ngram -lm /content/brown-trigram-kn.lm -ppl /content/brown-test.txt -unk
+
+8. Interpolation tuning
+The notebook evaluates lambda values on brown-dev.txt with:
+ngram -lm <unigram-model> -mix-lm <bigram-model> -lambda <value> -ppl /content/brown-dev.txt -unk
+
+After choosing a development-set setting, the selected model is evaluated on brown-test.txt.
