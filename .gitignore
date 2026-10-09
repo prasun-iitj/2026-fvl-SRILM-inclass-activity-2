@@ -1,0 +1,26 @@
+# Course corpus splits: obtain from the course-approved source
+brown-*.txt
+
+# Generated counts and language models
+*.count
+*.lm
+uni_add_*.lm
+bi_add_*.lm
+selected-unigram.lm
+selected-bigram.lm
+
+# SRILM source/build artifacts and archives
+srilm/
+srilm-built.tar.gz
+
+# Colab / Python temporary files
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Local experiment logs can be regenerated from the notebook
+experiment-results.txt
+experiment-commands.txt
+interpolation-results.txt
+interpolation-grid-results.txt
+preprocessing-results.txt
